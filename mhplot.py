@@ -14,6 +14,7 @@ Usage: myscript.py file.dat file2.dat file3.dat
 
 from matplotlib import pyplot as plt
 import sys
+import argparse
 
 def read_data(datafile: str):
     """Read data from datafile and return a list of lists."""
@@ -30,18 +31,31 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(__doc__)
         sys.exit(1)
-    # read the data file
-    datafile = sys.argv[1]
-    data = read_data(datafile) 
+    parser = argparse.ArgumentParser(
+        description="Plot data from multiple files with labels."
+    )
+    parser.add_argument('files', nargs='+', help="Path to data files")
+    parser.add_argument('-l', '--labels', 
+        nargs='+', 
+        help='Labels for the data files'
+    )
+    args = parser.parse_args()
+
+    print(args)
+    # exit(1)
+    
+    # read the data file and plot
+    for file, label in zip(args.files, args.labels):
+        data = read_data(file) 
+        # plot the memory hierarchy diagram 
+        mem_size = [pair[0] for pair in data]
+        flops = [pair[1] for pair in data]
+        plt.plot(mem_size, flops, marker='o', linestyle='-', label=label)  
     #TODO read the memory hierarchy data: L1 Cache etc.
 
-    # plot the memory hierarchy diagram 
-    mem_size = [pair[0] for pair in data]
-    flops = [pair[1] for pair in data]
-
-    plt.plot(mem_size, flops, marker='o', linestyle='-')  
     plt.xlabel('Memory [kBytes]')
     plt.ylabel('Performance [Mflops/s]')
+    plt.legend(args.labels)
     plt.title('Perfomance Matrix Multiplication')
     # plt.show()
     plt.savefig('mhplot.png')
