@@ -39,6 +39,10 @@ if __name__ == "__main__":
         nargs='+', 
         help='Labels for the data files'
     )
+    parser.add_argument('-n', '--name', 
+        default="mhplot.png",
+        help="The name of the plot file, default is mhplot.png"
+    )
     args = parser.parse_args()
 
     print(args)
@@ -58,4 +62,4 @@ if __name__ == "__main__":
     plt.legend(args.labels)
     plt.title('Perfomance Matrix Multiplication')
     # plt.show()
-    plt.savefig('mhplot.png')
+    plt.savefig(args.name)
