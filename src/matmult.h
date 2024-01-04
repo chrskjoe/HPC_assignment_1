@@ -17,4 +17,6 @@ void matmult_kmn(int m,int n,int k,double **A,double **B,double **C);
 
 void matmult_knm(int m,int n,int k,double **A,double **B,double **C);
 
+void matmult_blk(int m,int n,int k,double **A,double **B,double **C);
+
 #endif
