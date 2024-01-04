@@ -2,7 +2,7 @@ TARGET	= libmatmult.so
 LIBSRCS	= matmult.c
 LIBOBJS	= $(LIBSRCS:.c=.o)
 
-OPT	= -g 
+OPT	= -g
 PIC	= -fPIC
 
 CC	= gcc
