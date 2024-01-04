@@ -4,11 +4,6 @@ This script plots the memory hierarchy diagram according to the input data file.
 The input data file should be in the following format:
 TODO: add format
 
-TODO: If multiple data files are given, 
-the script will plot all of them in the same figure.
-
-TODO: customize plot name
-
 Usage: myscript.py file.dat file2.dat file3.dat
 """
 
@@ -45,9 +40,6 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    print(args)
-    # exit(1)
-    
     # read the data file and plot
     for file, label in zip(args.files, args.labels):
         data = read_data(file) 
