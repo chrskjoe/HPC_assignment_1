@@ -1,34 +1,35 @@
-     2.344   1105.354 0 # matmult_lib
-    21.094   3737.429 0 # matmult_lib
-    30.375   3846.929 0 # matmult_lib
-    58.594   6247.244 0 # matmult_lib
-   234.375   6951.238 0 # matmult_lib
-   527.344   7219.605 0 # matmult_lib
-   937.500   8201.620 0 # matmult_lib
-  1464.844   8180.794 0 # matmult_lib
-  1837.500   8316.641 0 # matmult_lib
-  3750.000   8403.333 0 # matmult_lib
-  8437.500   8455.711 0 # matmult_lib
- 23437.500   8464.451 0 # matmult_lib
- 52734.375   8476.236 0 # matmult_lib
- 93750.000   8456.157 0 # matmult_lib
-146484.375   8440.865 0 # matmult_lib
-170859.375   8431.025 0 # matmult_lib
-210937.500   8485.405 0 # matmult_lib
-287109.375   8487.018 0 # matmult_lib
-375000.000   8498.033 0 # matmult_lib
+     2.344   1093.345 0 # matmult_mkn
+    21.094   3232.484 0 # matmult_mkn
+    30.375   3426.618 0 # matmult_mkn
+    58.594   3702.748 0 # matmult_mkn
+   131.836   3520.914 0 # matmult_mkn
+   234.375   3455.232 0 # matmult_mkn
+   527.344   3662.352 0 # matmult_mkn
+   937.500   3769.434 0 # matmult_mkn
+  1464.844   3815.597 0 # matmult_mkn
+  1837.500   3863.199 0 # matmult_mkn
+  3750.000   3948.142 0 # matmult_mkn
+  8437.500   4013.377 0 # matmult_mkn
+ 23437.500   4075.462 0 # matmult_mkn
+ 52734.375   4037.119 0 # matmult_mkn
+ 93750.000   2806.884 248 # matmult_mkn
+146484.375   2290.774 968 # matmult_mkn
+170859.375   2273.266 1560 # matmult_mkn
+210937.500   2281.316 2752 # matmult_mkn
+287109.375   2294.842 8384 # matmult_mkn
+375000.000   2288.997 16000 # matmult_mkn
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 19861163: <mm_batch> in cluster <dcc> Done
+Subject: Job 19864283: <mm_batch> in cluster <dcc> Done
 
-Job <mm_batch> was submitted from host <n-62-30-1> by user <s173394> in cluster <dcc> at Fri Jan  5 11:23:31 2024
-Job was executed on host(s) <n-62-21-3>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Fri Jan  5 11:23:32 2024
+Job <mm_batch> was submitted from host <n-62-30-1> by user <s173394> in cluster <dcc> at Fri Jan  5 15:27:01 2024
+Job was executed on host(s) <n-62-21-2>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Fri Jan  5 15:27:02 2024
 </zhome/97/7/126506> was used as the home directory.
 </zhome/97/7/126506/02614/assignments/HPC_assignment_1/src> was used as the working directory.
-Started at Fri Jan  5 11:23:32 2024
-Terminated at Fri Jan  5 11:25:40 2024
-Results reported at Fri Jan  5 11:25:40 2024
+Started at Fri Jan  5 15:27:02 2024
+Terminated at Fri Jan  5 15:31:04 2024
+Results reported at Fri Jan  5 15:31:04 2024
 
 Your job looked like:
 
@@ -43,7 +44,7 @@ Your job looked like:
 # Author: Bernd Dammann <bd@cc.dtu.dk>
 #
 #BSUB -J mm_batch
-#BSUB -o output/lib_batch_%J.out
+#BSUB -o output/mkn_batch_%J.out
 #BSUB -q hpcintro
 #BSUB -n 1
 #BSUB -R "rusage[mem=2048]"
@@ -60,11 +61,11 @@ EXECUTABLE=matmult_c.gcc
 
 # define the mkn values in the MKN variable
 #
-SIZES="10 30 36 50 100 150 200 250 280 400 600 1000 1500 2000 2500 2700 3000 3500 4000"
+SIZES="10 30 36 50 75 100 150 200 250 280 400 600 1000 1500 2000 2500 2700 3000 3500 4000"
 
 # define the permutation type in PERM
 #
-PERM="lib"
+PERM="mkn"
 
 # uncomment and set a reasonable BLKSIZE for the blk version
 #
@@ -85,16 +86,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   126.85 sec.
+    CPU time :                                   240.20 sec.
     Max Memory :                                 506 MB
-    Average Memory :                             380.50 MB
+    Average Memory :                             351.75 MB
     Total Requested Memory :                     2048.00 MB
     Delta Memory :                               1542.00 MB
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                5
-    Run time :                                   128 sec.
-    Turnaround time :                            129 sec.
+    Run time :                                   241 sec.
+    Turnaround time :                            243 sec.
 
 The output (if any) is above this job summary.
 
