@@ -40,7 +40,7 @@ if __name__ == "__main__":
     )
     parser.add_argument('-L1', default=32, help="Size of L1 Cache with unut of KB")
     parser.add_argument('-L2', default=256, help="Size of L2 Cache with unut of KB")
-    parser.add_argument('-L3', default=2560, help="Size of L3 Cache with unut of KB")
+    parser.add_argument('-L3', default=25600, help="Size of L3 Cache with unut of KB")
     parser.add_argument('-log', action="store_true", help="Draw the log of the data")
     args = parser.parse_args()
 
