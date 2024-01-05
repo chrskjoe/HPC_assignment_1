@@ -105,8 +105,8 @@ matmult_knm(int m,int n,int k,double **A,double **B,double **C) {
             C[i][j] = 0;
 
     for(int l = 0; l < k; l++) {
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < n; j++) {
+        for(int j = 0; j < n; j++) {
+            for(int i = 0; i < m; i++) {
                 C[i][j] += A[i][l] * B[l][j];
             }
         }
