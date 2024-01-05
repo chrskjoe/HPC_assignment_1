@@ -38,6 +38,9 @@ if __name__ == "__main__":
         default="mhplot.png",
         help="The name of the plot file, default is mhplot.png"
     )
+    parser.add_argument('-L1', default=32, help="Size of L1 Cache with unut of KB")
+    parser.add_argument('-L2', default=64, help="Size of L2 Cache with unut of KB")
+    parser.add_argument('-L3', default=256, help="Size of L3 Cache with unut of KB")
     args = parser.parse_args()
 
     # read the data file and plot
@@ -47,10 +50,12 @@ if __name__ == "__main__":
         mem_size = [pair[0] for pair in data]
         flops = [pair[1] for pair in data]
         plt.plot(mem_size, flops, marker='o', linestyle='-', label=label)  
-    #TODO read the memory hierarchy data: L1 Cache etc.
 
     plt.xlabel('Memory [kBytes]')
     plt.ylabel('Performance [Mflops/s]')
+    plt.axvline(x=args.L1, color='r', linestyle='--', linewidth=1, label="L1 cache")
+    plt.axvline(x=args.L2, color='r', linestyle='--', linewidth=1, label="L2 cache")
+    plt.axvline(x=args.L3, color='r', linestyle='--', linewidth=1, label="L3 cache")
     plt.legend(args.labels)
     plt.title('Perfomance Matrix Multiplication')
     # plt.show()
