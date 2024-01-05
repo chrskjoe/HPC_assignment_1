@@ -1,23 +1,23 @@
-   234.375   1481.883 0 # matmult_kmn
-   937.500   1273.025 0 # matmult_kmn
-  5859.375   1108.241 0 # matmult_kmn
- 23437.500   1147.966 0 # matmult_kmn
- 52734.375   1157.416 0 # matmult_kmn
- 93750.000    710.858 248 # matmult_kmn
-146484.375    703.344 968 # matmult_kmn
-210937.500    676.746 2752 # matmult_kmn
+   234.375   1474.473
+   937.500   1276.463
+  5859.375   1107.728
+ 23437.500   1143.594
+ 52734.375   1155.197
+ 93750.000    580.252
+146484.375    722.880
+210937.500    662.271
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 19855957: <mm_batch> in cluster <dcc> Done
+Subject: Job 19859257: <mm_batch> in cluster <dcc> Done
 
-Job <mm_batch> was submitted from host <n-62-27-17> by user <s173394> in cluster <dcc> at Thu Jan  4 15:29:57 2024
-Job was executed on host(s) <n-62-21-75>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Thu Jan  4 15:29:58 2024
+Job <mm_batch> was submitted from host <n-62-30-1> by user <s173394> in cluster <dcc> at Fri Jan  5 09:55:21 2024
+Job was executed on host(s) <n-62-21-74>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Fri Jan  5 09:55:22 2024
 </zhome/97/7/126506> was used as the home directory.
 </zhome/97/7/126506/02614/assignments/HPC_assignment_1/src> was used as the working directory.
-Started at Thu Jan  4 15:29:58 2024
-Terminated at Thu Jan  4 15:32:58 2024
-Results reported at Thu Jan  4 15:32:58 2024
+Started at Fri Jan  5 09:55:22 2024
+Terminated at Fri Jan  5 09:58:28 2024
+Results reported at Fri Jan  5 09:58:28 2024
 
 Your job looked like:
 
@@ -32,7 +32,7 @@ Your job looked like:
 # Author: Bernd Dammann <bd@cc.dtu.dk>
 #
 #BSUB -J mm_batch
-#BSUB -o output/kmn_batch_%J.out
+#BSUB -o output/mnk_batch_%J.out
 #BSUB -q hpcintro
 #BSUB -n 1
 #BSUB -R "rusage[mem=2048]"
@@ -53,7 +53,7 @@ SIZES="100 200 500 1000 1500 2000 2500 3000"
 
 # define the permutation type in PERM
 #
-PERM="kmn"
+PERM="mnk"
 
 # uncomment and set a reasonable BLKSIZE for the blk version
 #
@@ -74,16 +74,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   178.82 sec.
-    Max Memory :                                 228 MB
-    Average Memory :                             164.67 MB
+    CPU time :                                   184.48 sec.
+    Max Memory :                                 289 MB
+    Average Memory :                             226.50 MB
     Total Requested Memory :                     2048.00 MB
-    Delta Memory :                               1820.00 MB
+    Delta Memory :                               1759.00 MB
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                5
-    Run time :                                   180 sec.
-    Turnaround time :                            181 sec.
+    Run time :                                   193 sec.
+    Turnaround time :                            187 sec.
 
 The output (if any) is above this job summary.
 

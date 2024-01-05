@@ -1,23 +1,23 @@
-   234.375   1482.351 0 # matmult_knm
-   937.500   1275.657 0 # matmult_knm
-  5859.375   1108.296 0 # matmult_knm
- 23437.500   1146.839 0 # matmult_knm
- 52734.375   1151.978 0 # matmult_knm
- 93750.000    579.810 248 # matmult_knm
-146484.375    719.172 968 # matmult_knm
-210937.500    651.568 2752 # matmult_knm
+   234.375   3465.697 0 # matmult_kmn
+   937.500   3327.128 0 # matmult_kmn
+  5859.375   3514.166 0 # matmult_kmn
+ 23437.500   3648.457 0 # matmult_kmn
+ 52734.375   3645.836 0 # matmult_kmn
+ 93750.000   2585.214 248 # matmult_kmn
+146484.375   1884.004 968 # matmult_kmn
+210937.500   1864.112 2752 # matmult_kmn
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 19855905: <mm_batch> in cluster <dcc> Done
+Subject: Job 19859253: <mm_batch> in cluster <dcc> Done
 
-Job <mm_batch> was submitted from host <n-62-27-17> by user <s173394> in cluster <dcc> at Thu Jan  4 15:16:55 2024
-Job was executed on host(s) <n-62-21-6>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Thu Jan  4 15:16:56 2024
+Job <mm_batch> was submitted from host <n-62-30-1> by user <s173394> in cluster <dcc> at Fri Jan  5 09:55:09 2024
+Job was executed on host(s) <n-62-21-6>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Fri Jan  5 09:55:10 2024
 </zhome/97/7/126506> was used as the home directory.
 </zhome/97/7/126506/02614/assignments/HPC_assignment_1/src> was used as the working directory.
-Started at Thu Jan  4 15:16:56 2024
-Terminated at Thu Jan  4 15:20:04 2024
-Results reported at Thu Jan  4 15:20:04 2024
+Started at Fri Jan  5 09:55:10 2024
+Terminated at Fri Jan  5 09:56:32 2024
+Results reported at Fri Jan  5 09:56:32 2024
 
 Your job looked like:
 
@@ -32,7 +32,7 @@ Your job looked like:
 # Author: Bernd Dammann <bd@cc.dtu.dk>
 #
 #BSUB -J mm_batch
-#BSUB -o knm_batch_%J.out
+#BSUB -o output/kmn_batch_%J.out
 #BSUB -q hpcintro
 #BSUB -n 1
 #BSUB -R "rusage[mem=2048]"
@@ -53,7 +53,7 @@ SIZES="100 200 500 1000 1500 2000 2500 3000"
 
 # define the permutation type in PERM
 #
-PERM="knm"
+PERM="kmn"
 
 # uncomment and set a reasonable BLKSIZE for the blk version
 #
@@ -74,16 +74,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   186.07 sec.
-    Max Memory :                                 246 MB
-    Average Memory :                             194.00 MB
+    CPU time :                                   81.33 sec.
+    Max Memory :                                 289 MB
+    Average Memory :                             205.33 MB
     Total Requested Memory :                     2048.00 MB
-    Delta Memory :                               1802.00 MB
+    Delta Memory :                               1759.00 MB
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                5
-    Run time :                                   188 sec.
-    Turnaround time :                            189 sec.
+    Run time :                                   82 sec.
+    Turnaround time :                            83 sec.
 
 The output (if any) is above this job summary.
 
