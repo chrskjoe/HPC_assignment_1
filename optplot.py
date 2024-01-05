@@ -64,5 +64,5 @@ if __name__ == "__main__":
         plt.xscale('log')
     plt.legend(args.labels)
 
-    plt.title('Compiler optimizations comparison (' + os.path.basename(args.files[0]) + ')')
+    plt.title('Compiler optimizations comparison (' + os.path.basename(args.files[0])[0:3] + ')')
     plt.savefig(args.name)

@@ -1,5 +1,5 @@
 #!/bin/bash
-input_dir="data/compiler-flags"
+input_dir="data"
 
 options=(
     "O0"
