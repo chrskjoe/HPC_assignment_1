@@ -1,30 +1,34 @@
-     2.344   1042.609 0 # matmult_kmn
-    14.648   2833.857 0 # matmult_kmn
-    58.594   3565.588 0 # matmult_kmn
-   234.375   3475.445 0 # matmult_kmn
-   527.344   3587.609 0 # matmult_kmn
-   937.500   3277.044 0 # matmult_kmn
-  3750.000   3447.713 0 # matmult_kmn
-  8437.500   3560.598 0 # matmult_kmn
- 23437.500   3636.063 0 # matmult_kmn
- 52734.375   3629.943 0 # matmult_kmn
- 93750.000   2186.620 248 # matmult_kmn
-146484.375   1847.728 968 # matmult_kmn
-210937.500   1848.269 2752 # matmult_kmn
-287109.375   1849.120 8384 # matmult_kmn
-375000.000   1849.675 16000 # matmult_kmn
+     2.344   1046.031 0 # matmult_kmn
+    21.094   3066.186 0 # matmult_kmn
+    30.375   3312.953 0 # matmult_kmn
+    58.594   3605.402 0 # matmult_kmn
+   234.375   3297.923 0 # matmult_kmn
+   527.344   3355.896 0 # matmult_kmn
+   937.500   3104.792 0 # matmult_kmn
+  1464.844   3138.620 0 # matmult_kmn
+  1837.500   3173.787 0 # matmult_kmn
+  3750.000   3278.439 0 # matmult_kmn
+  8437.500   3377.604 0 # matmult_kmn
+ 23437.500   3462.135 0 # matmult_kmn
+ 52734.375   3462.912 0 # matmult_kmn
+ 93750.000   2445.885 248 # matmult_kmn
+146484.375   1870.049 968 # matmult_kmn
+170859.375   1866.431 1560 # matmult_kmn
+210937.500   1879.998 2752 # matmult_kmn
+287109.375   1873.177 8384 # matmult_kmn
+375000.000   1877.205 16000 # matmult_kmn
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 19860623: <mm_batch> in cluster <dcc> Done
+Subject: Job 19861148: <mm_batch> in cluster <dcc> Done
 
-Job <mm_batch> was submitted from host <n-62-30-1> by user <s173394> in cluster <dcc> at Fri Jan  5 10:31:57 2024
-Job was executed on host(s) <n-62-21-74>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Fri Jan  5 10:31:57 2024
+Job <mm_batch> was submitted from host <n-62-30-1> by user <s173394> in cluster <dcc> at Fri Jan  5 11:23:23 2024
+Job was executed on host(s) <n-62-21-5>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Fri Jan  5 11:23:24 2024
 </zhome/97/7/126506> was used as the home directory.
 </zhome/97/7/126506/02614/assignments/HPC_assignment_1/src> was used as the working directory.
-Started at Fri Jan  5 10:31:57 2024
-Terminated at Fri Jan  5 10:35:58 2024
-Results reported at Fri Jan  5 10:35:58 2024
+Started at Fri Jan  5 11:23:24 2024
+Terminated at Fri Jan  5 11:27:57 2024
+Results reported at Fri Jan  5 11:27:57 2024
 
 Your job looked like:
 
@@ -43,7 +47,7 @@ Your job looked like:
 #BSUB -q hpcintro
 #BSUB -n 1
 #BSUB -R "rusage[mem=2048]"
-#BSUB -W 15
+#BSUB -W 20
 # uncomment the following line, if you want to assure that your job has
 # a whole CPU for itself (shared L3 cache)
 # #BSUB -R "span[hosts=1] affinity[socket(1)]"
@@ -56,7 +60,7 @@ EXECUTABLE=matmult_c.gcc
 
 # define the mkn values in the MKN variable
 #
-SIZES="10 25 50 100 150 200 400 600 1000 1500 2000 2500 3000 3500 4000"
+SIZES="10 30 36 50 100 150 200 250 280 400 600 1000 1500 2000 2500 2700 3000 3500 4000"
 
 # define the permutation type in PERM
 #
@@ -81,16 +85,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   239.13 sec.
-    Max Memory :                                 506 MB
-    Average Memory :                             351.75 MB
+    CPU time :                                   271.16 sec.
+    Max Memory :                                 507 MB
+    Average Memory :                             329.25 MB
     Total Requested Memory :                     2048.00 MB
-    Delta Memory :                               1542.00 MB
+    Delta Memory :                               1541.00 MB
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                5
-    Run time :                                   310 sec.
-    Turnaround time :                            241 sec.
+    Run time :                                   272 sec.
+    Turnaround time :                            274 sec.
 
 The output (if any) is above this job summary.
 
