@@ -1,23 +1,30 @@
-   234.375   1474.473
-   937.500   1276.463
-  5859.375   1107.728
- 23437.500   1143.594
- 52734.375   1155.197
- 93750.000    580.252
-146484.375    722.880
-210937.500    662.271
+     2.344   1066.257 0 # matmult_mkn
+    14.648   2812.292 0 # matmult_mkn
+    58.594   3641.450 0 # matmult_mkn
+   234.375   3458.353 0 # matmult_mkn
+   527.344   3630.344 0 # matmult_mkn
+   937.500   3756.370 0 # matmult_mkn
+  3750.000   3916.680 0 # matmult_mkn
+  8437.500   3978.374 0 # matmult_mkn
+ 23437.500   4047.085 0 # matmult_mkn
+ 52734.375   3573.136 0 # matmult_mkn
+ 93750.000   2329.675 248 # matmult_mkn
+146484.375   2249.462 968 # matmult_mkn
+210937.500   2184.936 2752 # matmult_mkn
+287109.375   2134.413 8384 # matmult_mkn
+375000.000   2139.058 16000 # matmult_mkn
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 19859257: <mm_batch> in cluster <dcc> Done
+Subject: Job 19860646: <mm_batch> in cluster <dcc> Done
 
-Job <mm_batch> was submitted from host <n-62-30-1> by user <s173394> in cluster <dcc> at Fri Jan  5 09:55:21 2024
-Job was executed on host(s) <n-62-21-74>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Fri Jan  5 09:55:22 2024
+Job <mm_batch> was submitted from host <n-62-30-1> by user <s173394> in cluster <dcc> at Fri Jan  5 10:32:11 2024
+Job was executed on host(s) <n-62-21-74>, in queue <hpcintro>, as user <s173394> in cluster <dcc> at Fri Jan  5 10:32:12 2024
 </zhome/97/7/126506> was used as the home directory.
 </zhome/97/7/126506/02614/assignments/HPC_assignment_1/src> was used as the working directory.
-Started at Fri Jan  5 09:55:22 2024
-Terminated at Fri Jan  5 09:58:28 2024
-Results reported at Fri Jan  5 09:58:28 2024
+Started at Fri Jan  5 10:32:12 2024
+Terminated at Fri Jan  5 10:35:49 2024
+Results reported at Fri Jan  5 10:35:49 2024
 
 Your job looked like:
 
@@ -32,7 +39,7 @@ Your job looked like:
 # Author: Bernd Dammann <bd@cc.dtu.dk>
 #
 #BSUB -J mm_batch
-#BSUB -o output/mnk_batch_%J.out
+#BSUB -o output/mkn_batch_%J.out
 #BSUB -q hpcintro
 #BSUB -n 1
 #BSUB -R "rusage[mem=2048]"
@@ -49,11 +56,11 @@ EXECUTABLE=matmult_c.gcc
 
 # define the mkn values in the MKN variable
 #
-SIZES="100 200 500 1000 1500 2000 2500 3000"
+SIZES="10 25 50 100 150 200 400 600 1000 1500 2000 2500 3000 3500 4000"
 
 # define the permutation type in PERM
 #
-PERM="mnk"
+PERM="mkn"
 
 # uncomment and set a reasonable BLKSIZE for the blk version
 #
@@ -74,16 +81,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   184.48 sec.
-    Max Memory :                                 289 MB
-    Average Memory :                             226.50 MB
+    CPU time :                                   215.88 sec.
+    Max Memory :                                 390 MB
+    Average Memory :                             293.75 MB
     Total Requested Memory :                     2048.00 MB
-    Delta Memory :                               1759.00 MB
+    Delta Memory :                               1658.00 MB
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                5
-    Run time :                                   193 sec.
-    Turnaround time :                            187 sec.
+    Run time :                                   216 sec.
+    Turnaround time :                            218 sec.
 
 The output (if any) is above this job summary.
 
