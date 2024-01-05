@@ -39,8 +39,8 @@ if __name__ == "__main__":
         help="The name of the plot file, default is mhplot.png"
     )
     parser.add_argument('-L1', default=32, help="Size of L1 Cache with unut of KB")
-    parser.add_argument('-L2', default=64, help="Size of L2 Cache with unut of KB")
-    parser.add_argument('-L3', default=256, help="Size of L3 Cache with unut of KB")
+    parser.add_argument('-L2', default=256, help="Size of L2 Cache with unut of KB")
+    parser.add_argument('-L3', default=2560, help="Size of L3 Cache with unut of KB")
     args = parser.parse_args()
 
     # read the data file and plot
