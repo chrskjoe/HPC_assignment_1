@@ -41,6 +41,7 @@ if __name__ == "__main__":
     parser.add_argument('-L1', default=32, help="Size of L1 Cache with unut of KB")
     parser.add_argument('-L2', default=256, help="Size of L2 Cache with unut of KB")
     parser.add_argument('-L3', default=2560, help="Size of L3 Cache with unut of KB")
+    parser.add_argument('-log', action="store_true", help="Draw the log of the data")
     args = parser.parse_args()
 
     # read the data file and plot
@@ -56,6 +57,8 @@ if __name__ == "__main__":
     plt.axvline(x=args.L1, color='r', linestyle='--', linewidth=1, label="L1 cache")
     plt.axvline(x=args.L2, color='r', linestyle='--', linewidth=1, label="L2 cache")
     plt.axvline(x=args.L3, color='r', linestyle='--', linewidth=1, label="L3 cache")
+    if args.log: 
+        plt.xscale('log')
     plt.legend(args.labels)
     plt.title('Perfomance Matrix Multiplication')
     # plt.show()
