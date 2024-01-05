@@ -1,10 +1,15 @@
 #include "cblas.h"
+#include <math.h>
 
 void
 matmult_nat(int m, int n, int k, double **A, double **B, double **C) {
+    // initialize C with 0's
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            C[i][j] = 0;
+
     for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {
-            C[i][j] = 0;
             for(int l = 0; l < k; l++) {
                 C[i][j] += A[i][l] * B[l][j];
             }
@@ -30,58 +35,46 @@ matmult_mnk(int m,int n,int k,double **A,double **B,double **C) {
 
 void 
 matmult_mkn(int m,int n,int k,double **A,double **B,double **C) {
-    for(int i = 0; i < m; i++) {
-        for(int j = 0; j < k; j++) {
+    // initialize C with 0's
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
             C[i][j] = 0;
-            for(int l = 0; l < n; l++) {
+
+    for(int i = 0; i < m; i++) {
+        for(int l = 0; l < k; l++) {
+            for(int j = 0; j < n; j++) {
                 C[i][j] += A[i][l] * B[l][j];
             }
-        }  
-    } 
+        }
+    }
 }
 
 void 
 matmult_nmk(int m,int n,int k,double **A,double **B,double **C) {
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
+    // initialize C with 0's
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
             C[i][j] = 0;
+
+    for(int j = 0; j < n; j++) {
+        for(int i = 0; i < m; i++) {
             for(int l = 0; l < k; l++) {
                 C[i][j] += A[i][l] * B[l][j];
             }
-        }  
-    } 
+        }
+    }
 }
 
 void 
 matmult_nkm(int m,int n,int k,double **A,double **B,double **C) {
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < k; j++) {
+    // initialize C with 0's
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
             C[i][j] = 0;
-            for(int l = 0; l < m; l++) {
-                C[i][j] += A[i][l] * B[l][j];
-            }
-        }  
-    } 
-}
 
-void 
-matmult_kmn(int m,int n,int k,double **A,double **B,double **C) {
-    for(int i = 0; i < k; i++) {
-        for(int j = 0; j < m; j++) {
-            C[i][j] = 0;
-            for(int l = 0; l < n; l++) {
-                C[i][j] += A[i][l] * B[l][j];
-            }
-        }  
-    } 
-}
-
-void 
-matmult_knm(int m,int n,int k,double **A,double **B,double **C) {
-    for(int i = 0; i < k; i++) {
-        for(int j = 0; j < n; j++) {
-            C[i][j] = 0;
-            for(int l = 0; l < m; l++) {
+    for(int j = 0; j < n; j++) {
+        for(int l = 0; l < k; l++) {
+            for(int i = 0; i < m; i++) {
                 C[i][j] += A[i][l] * B[l][j];
             }
         }
@@ -89,6 +82,56 @@ matmult_knm(int m,int n,int k,double **A,double **B,double **C) {
 }
 
 void 
-matmult_blk(int m,int n,int k,double **A,double **B,double **C, int bs) {
+matmult_kmn(int m,int n,int k,double **A,double **B,double **C) {
+    // initialize C with 0's
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            C[i][j] = 0;
 
+    for(int l = 0; l < k; l++) {
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                C[i][j] += A[i][l] * B[l][j];
+            }
+        }
+    }
+}
+
+void 
+matmult_knm(int m,int n,int k,double **A,double **B,double **C) {
+    // initialize C with 0's
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            C[i][j] = 0;
+
+    for(int l = 0; l < k; l++) {
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                C[i][j] += A[i][l] * B[l][j];
+            }
+        }
+    }
+}
+
+void 
+matmult_blk(int m,int n,int k,double **A,double **B,double **C, int bs) {
+    // initialize C with 0's
+    for(int bi=0; bi<m; bi++) 
+        for(int bj=0; bj<n; bj++) 
+            C[bi][bj] = 0;
+
+    // blocking matrix multiplication
+    for(int bi=0; bi<m; bi+=bs) {
+        for(int bj=0; bj<n; bj+=bs) {
+            for(int bl=0; bl<k; bl+=bs) {
+                for(int i=0; i<fmin(m-bi, bs); i++) {
+                    for(int j=0; j<fmin(n-bj, bs); j++) {
+                        for(int l=0; l<fmin(k-bl, bs); l++) {
+                            C[bi+i][bj+j] += A[bi+i][bl+l]*B[bl+l][bj+j];
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
