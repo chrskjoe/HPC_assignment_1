@@ -2,7 +2,13 @@ TARGET	= libmatmult.so
 LIBSRCS	= matmult.c
 LIBOBJS	= $(LIBSRCS:.c=.o)
 
-OPT	= -g -O3
+# OPT = -g O1
+# OPT = -g O2
+# OPT = -g O3
+# OPT = -g Ofast
+# OPT = -f Ofast -funroll-loops
+# OPT = -f Ofast -funroll-loops -flto
+OPT	= -g # base case is without optimizations
 PIC	= -fPIC
 
 CC	= gcc

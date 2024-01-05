@@ -9,6 +9,7 @@ Usage: myscript.py file.dat file2.dat file3.dat
 
 from matplotlib import pyplot as plt
 import sys
+import os
 import argparse
 
 def read_data(datafile: str):
@@ -20,7 +21,6 @@ def read_data(datafile: str):
             data_point = [float(parts[0]), float(parts[1])]
             data.append(data_point)
     return data
-
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -38,6 +38,8 @@ if __name__ == "__main__":
         default="mhplot.png",
         help="The name of the plot file, default is mhplot.png"
     )
+
+    args = parser.parse_args()
     parser.add_argument('-L1', default=32, help="Size of L1 Cache with unut of KB")
     parser.add_argument('-L2', default=256, help="Size of L2 Cache with unut of KB")
     parser.add_argument('-L3', default=25600, help="Size of L3 Cache with unut of KB")
@@ -61,6 +63,6 @@ if __name__ == "__main__":
     if args.log: 
         plt.xscale('log')
     plt.legend(args.labels)
-    plt.title('Perfomance Matrix Multiplication')
-    # plt.show()
+
+    plt.title('Compiler optimizations comparison (' + os.path.basename(args.files[0]) + ')')
     plt.savefig(args.name)
