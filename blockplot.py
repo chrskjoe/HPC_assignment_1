@@ -39,7 +39,7 @@ if __name__ == "__main__":
         help="The name of the plot file, default is mhplot.png"
     )
     parser.add_argument('-t', '--title', 
-        default="Perfomance Matrix Multiplication",
+        default="Block Size to Performance",
         help="The title of the figure."
     )
     parser.add_argument('-L1', default=32, help="Size of L1 Cache with unut of KB")
