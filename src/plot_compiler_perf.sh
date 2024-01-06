@@ -37,7 +37,7 @@ permutations=(
     "$input_dir/${options[1]}/mkn.dat" \
     "$input_dir/${options[2]}/mkn.dat" \
     -l "${options[0]}" "${options[1]}" "${options[2]}" \
-    -n "$mkn_optplot.png" \
+    -n "mkn_optplot.png" \
     -log
 # done
     
