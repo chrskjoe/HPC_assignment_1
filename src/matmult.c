@@ -123,12 +123,13 @@ matmult_blk(int m,int n,int k,double **A,double **B,double **C, int bs) {
             C[bi][bj] = 0;
 
     // blocking matrix multiplication
-    for(int bi=0; bi<m; bi+=bs) {
-        for(int bj=0; bj<n; bj+=bs) {
+    // check kmn or mkn
+        for(int bi=0; bi<m; bi+=bs) {
             for(int bl=0; bl<k; bl+=bs) {
-                for(int i=0; i<fmin(m-bi, bs); i++) {
-                    for(int j=0; j<fmin(n-bj, bs); j++) {
+                for(int bj=0; bj<n; bj+=bs) {
+                    for(int i=0; i<fmin(m-bi, bs); i++) {
                         for(int l=0; l<fmin(k-bl, bs); l++) {
+                            for(int j=0; j<fmin(n-bj, bs); j++) {
                             C[bi+i][bj+j] += A[bi+i][bl+l]*B[bl+l][bj+j];
                         }
                     }

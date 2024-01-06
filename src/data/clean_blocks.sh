@@ -10,9 +10,9 @@ basedir="."
 for subdir in "${basedir}"/*/; do
     echo "Files in ${subdir}:"
     for input in "${subdir}"*; do
-    echo $input
         if [[ $input == *.out ]]; then
-            output=$(grep -oE '[^/]{3}\.sub' $input | rev | cut -c 5- | rev)
+            output=$(grep -oP '\.sub \K[^ ]+' $input)
+            echo "Output file: $output"
             output_dir="${subdir}"
             head $input -n 22 | tail -n "+${line_skip}" | awk '{print $1, $2}' > "$output_dir$output.dat"
         else

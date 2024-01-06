@@ -1,0 +1,15 @@
+Loaded module: gcc/10.3.0-binutils-2.36.1
+Loaded module: gprofng/2.41.50
+     2.344    876.180 0 # matmult_blk 16
+    21.094   1419.343 0 # matmult_blk 16
+    30.375   1400.846 0 # matmult_blk 16
+    58.594   1402.629 0 # matmult_blk 16
+   131.836   1454.027 0 # matmult_blk 16
+   234.375   1460.486 0 # matmult_blk 16
+   527.344   1472.327 0 # matmult_blk 16
+   937.500   1466.465 0 # matmult_blk 16
+  1464.844   1468.521 0 # matmult_blk 16
+  1837.500   1465.454 0 # matmult_blk 16
+  3750.000   1469.521 0 # matmult_blk 16
+  8437.500   1467.307 0 # matmult_blk 16
+ 23437.500   1470.179 0 # matmult_blk 16

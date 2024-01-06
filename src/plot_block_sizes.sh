@@ -24,6 +24,11 @@ python3 "../mhplot.py" \
     "${input_dir}/block/${block_sizes[1]}.dat" \
     "${input_dir}/block/${block_sizes[2]}.dat" \
     "${input_dir}/block/${block_sizes[3]}.dat" \
+    "${input_dir}/block/${block_sizes[4]}.dat" \
+    "${input_dir}/block/${block_sizes[5]}.dat" \
+    "${input_dir}/block/${block_sizes[6]}.dat" \
+    "${input_dir}/block/${block_sizes[7]}.dat" \
+    "${input_dir}/block/${block_sizes[8]}.dat" \
     -l ${block_sizes[@]} \
     -n "block_sizes.png" \
     -t "Perfomance Matrix Multiplication (block size)" \
