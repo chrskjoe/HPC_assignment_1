@@ -33,6 +33,7 @@ matmult_mnk(int m,int n,int k,double **A,double **B,double **C) {
     matmult_nat(m, n, k, A, B, C);
 }
 
+// **
 void 
 matmult_mkn(int m,int n,int k,double **A,double **B,double **C) {
     // initialize C with 0's
@@ -81,6 +82,7 @@ matmult_nkm(int m,int n,int k,double **A,double **B,double **C) {
     } 
 }
 
+// **
 void 
 matmult_kmn(int m,int n,int k,double **A,double **B,double **C) {
     // initialize C with 0's
@@ -121,9 +123,9 @@ matmult_blk(int m,int n,int k,double **A,double **B,double **C, int bs) {
             C[bi][bj] = 0;
 
     // blocking matrix multiplication
-    for(int bl=0; bl<k; bl+=bs) {
-        for(int bi=0; bi<m; bi+=bs) {
-            for(int bj=0; bj<n; bj+=bs) {
+    for(int bi=0; bi<m; bi+=bs) {
+        for(int bj=0; bj<n; bj+=bs) {
+            for(int bl=0; bl<k; bl+=bs) {
                 for(int i=0; i<fmin(m-bi, bs); i++) {
                     for(int j=0; j<fmin(n-bj, bs); j++) {
                         for(int l=0; l<fmin(k-bl, bs); l++) {
