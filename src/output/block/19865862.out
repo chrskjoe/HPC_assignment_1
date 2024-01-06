@@ -1,0 +1,59 @@
+Loaded module: gcc/10.3.0-binutils-2.36.1
+Loaded module: gprofng/2.41.50
+     2.344    878.090 0 # matmult_blk 131072
+    21.094   1554.826 0 # matmult_blk 131072
+    30.375   1592.656 0 # matmult_blk 131072
+    58.594   1638.741 0 # matmult_blk 131072
+   131.836   1483.850 0 # matmult_blk 131072
+   234.375   1534.592 0 # matmult_blk 131072
+   527.344   1590.499 0 # matmult_blk 131072
+   937.500   1623.666 0 # matmult_blk 131072
+  1464.844   1642.563 0 # matmult_blk 131072
+  1837.500   1649.338 0 # matmult_blk 131072
+  3750.000   1662.971 0 # matmult_blk 131072
+  8437.500   1622.518 0 # matmult_blk 131072
+ 23437.500   1426.223 0 # matmult_blk 131072
+ 52734.375   1408.989 0 # matmult_blk 131072
+ 93750.000   1409.438 248 # matmult_blk 131072
+146484.375   1411.616 968 # matmult_blk 131072
+170859.375   1412.269 1560 # matmult_blk 131072
+210937.500   1419.131 2752 # matmult_blk 131072
+287109.375   1412.015 8384 # matmult_blk 131072
+375000.000   1419.833 16000 # matmult_blk 131072
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19865862: <131072> in cluster <dcc> Done
+
+Job <131072> was submitted from host <n-62-30-5> by user <s233091> in cluster <dcc> at Sat Jan  6 11:39:26 2024
+Job was executed on host(s) <n-62-31-4>, in queue <hpc>, as user <s233091> in cluster <dcc> at Sat Jan  6 11:39:26 2024
+</zhome/c7/f/203083> was used as the home directory.
+</zhome/c7/f/203083/02614/HPC_assignment_1/src> was used as the working directory.
+Started at Sat Jan  6 11:39:26 2024
+Terminated at Sat Jan  6 11:45:05 2024
+Results reported at Sat Jan  6 11:45:05 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./mm_batch_blk.sub 131072
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   333.56 sec.
+    Max Memory :                                 506 MB
+    Average Memory :                             363.80 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               518.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   409 sec.
+    Turnaround time :                            339 sec.
+
+The output (if any) is above this job summary.
+

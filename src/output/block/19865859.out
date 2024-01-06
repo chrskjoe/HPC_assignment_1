@@ -1,0 +1,59 @@
+Loaded module: gcc/10.3.0-binutils-2.36.1
+Loaded module: gprofng/2.41.50
+     2.344    877.099 0 # matmult_blk 16384
+    21.094   1555.260 0 # matmult_blk 16384
+    30.375   1592.438 0 # matmult_blk 16384
+    58.594   1606.834 0 # matmult_blk 16384
+   131.836   1483.185 0 # matmult_blk 16384
+   234.375   1534.446 0 # matmult_blk 16384
+   527.344   1591.894 0 # matmult_blk 16384
+   937.500   1622.525 0 # matmult_blk 16384
+  1464.844   1642.078 0 # matmult_blk 16384
+  1837.500   1649.962 0 # matmult_blk 16384
+  3750.000   1663.859 0 # matmult_blk 16384
+  8437.500   1597.257 0 # matmult_blk 16384
+ 23437.500   1425.362 0 # matmult_blk 16384
+ 52734.375   1411.194 0 # matmult_blk 16384
+ 93750.000   1415.892 248 # matmult_blk 16384
+146484.375   1410.837 968 # matmult_blk 16384
+170859.375   1410.054 1560 # matmult_blk 16384
+210937.500   1414.712 2752 # matmult_blk 16384
+287109.375   1410.942 8384 # matmult_blk 16384
+375000.000   1418.056 16000 # matmult_blk 16384
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19865859: <16384> in cluster <dcc> Done
+
+Job <16384> was submitted from host <n-62-30-5> by user <s233091> in cluster <dcc> at Sat Jan  6 11:39:25 2024
+Job was executed on host(s) <n-62-31-4>, in queue <hpc>, as user <s233091> in cluster <dcc> at Sat Jan  6 11:39:26 2024
+</zhome/c7/f/203083> was used as the home directory.
+</zhome/c7/f/203083/02614/HPC_assignment_1/src> was used as the working directory.
+Started at Sat Jan  6 11:39:26 2024
+Terminated at Sat Jan  6 11:45:05 2024
+Results reported at Sat Jan  6 11:45:05 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./mm_batch_blk.sub 16384
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   333.90 sec.
+    Max Memory :                                 506 MB
+    Average Memory :                             363.80 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               518.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   409 sec.
+    Turnaround time :                            340 sec.
+
+The output (if any) is above this job summary.
+
