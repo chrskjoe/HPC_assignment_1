@@ -44,9 +44,8 @@ python3 "../mhplot.py" \
     "${input_dir}/block/${block_sizes[6]}.dat" \
     "${input_dir}/block/${block_sizes[7]}.dat" \
     "${input_dir}/block/${block_sizes[8]}.dat" \
-    "${input_dir}/${top_combinations[0]}.dat" \
     "${input_dir}/${top_combinations[1]}.dat" \
-    -l ${block_sizes[@]} ${top_combinations[@]}\
-    -n "block_sizes_knm_nkm.png" \
+    -l ${block_sizes[@]} ${top_combinations[1]}\
+    -n "block_sizes_mkn.png" \
     -t "Blocked matrix multiplication (block size)" \
     -log

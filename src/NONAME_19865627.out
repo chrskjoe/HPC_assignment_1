@@ -1,0 +1,38 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19865627: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s233091> in cluster <dcc> at Sat Jan  6 09:56:01 2024
+Job was executed on host(s) <n-62-31-4>, in queue <hpc>, as user <s233091> in cluster <dcc> at Sat Jan  6 09:56:03 2024
+</zhome/c7/f/203083> was used as the home directory.
+</zhome/c7/f/203083/02614/HPC_assignment_1/src> was used as the working directory.
+Started at Sat Jan  6 09:56:03 2024
+Terminated at Sat Jan  6 11:26:49 2024
+Results reported at Sat Jan  6 11:26:49 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+./do_experiments.sh
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   1971.00 sec.
+    Max Memory :                                 543 MB
+    Average Memory :                             64.86 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               481.00 MB
+    Max Swap :                                   -
+    Max Processes :                              7
+    Max Threads :                                8
+    Run time :                                   5446 sec.
+    Turnaround time :                            5448 sec.
+
+The output (if any) is above this job summary.
+

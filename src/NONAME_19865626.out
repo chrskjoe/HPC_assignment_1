@@ -1,0 +1,55 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19865626: <NONAME> in cluster <dcc> Exited
+
+Job <NONAME> was submitted from host <hpclogin1> by user <s233091> in cluster <dcc> at Sat Jan  6 09:55:55 2024
+Job was executed on host(s) <n-62-31-4>, in queue <hpc>, as user <s233091> in cluster <dcc> at Sat Jan  6 09:55:56 2024
+</zhome/c7/f/203083> was used as the home directory.
+</zhome/c7/f/203083/02614/HPC_assignment_1/src> was used as the working directory.
+Started at Sat Jan  6 09:55:56 2024
+Terminated at Sat Jan  6 11:26:49 2024
+Results reported at Sat Jan  6 11:26:49 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+block_sizes=(
+    "16"
+    "32"
+    "64"
+    "128"
+    "264"
+    "512"
+    "1024"
+    "2048"
+    "4096"
+)
+
+for block_size in "${block_sizes[@]}"; do
+    /appl/gprofng/20231218/bin/gp-collect-app -o test.$block_size.er -p on -S on -h dch -h dcm -h l2h -h l2m -h l3h -h l3m  ./mm_batch_blk.sub $block_size 
+    gprofng display text -functions test.$block_size.er/
+done
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   1895.00 sec.
+    Max Memory :                                 544 MB
+    Average Memory :                             61.81 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               480.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                6
+    Run time :                                   5453 sec.
+    Turnaround time :                            5454 sec.
+
+The output (if any) is above this job summary.
+
