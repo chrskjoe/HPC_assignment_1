@@ -20,6 +20,7 @@
 # valid values: matmult_c.studio, matmult_f.studio, matmult_c.gcc or
 # matmult_f.gcc
 #
+
 EXECUTABLE=matmult_c.gcc
 
 # define the mkn values in the MKN variable
@@ -31,8 +32,8 @@ SIZES="10 30 36 50 75 100 150 200 250 280 400 600 1000 1500 2000 2500 2700 3000 
 PERM="blk"
 
 # uncomment and set a reasonable BLKSIZE for the blk version
-#
-BLKSIZE=32
+# We want to utilize L1 cache
+BLKSIZE=$1
 
 # enable(1)/disable(0) result checking
 export MATMULT_COMPARE=1

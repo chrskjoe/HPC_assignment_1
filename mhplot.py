@@ -38,6 +38,10 @@ if __name__ == "__main__":
         default="mhplot.png",
         help="The name of the plot file, default is mhplot.png"
     )
+    parser.add_argument('-t', '--title', 
+        default="Perfomance Matrix Multiplication",
+        help="The title of the figure."
+    )
     parser.add_argument('-L1', default=32, help="Size of L1 Cache with unut of KB")
     parser.add_argument('-L2', default=256, help="Size of L2 Cache with unut of KB")
     parser.add_argument('-L3', default=25600, help="Size of L3 Cache with unut of KB")
@@ -71,6 +75,6 @@ if __name__ == "__main__":
 
     plt.grid()
     plt.legend(args.labels)
-    plt.title('Perfomance Matrix Multiplication')
+    plt.title(args.title)
     # plt.show()
     plt.savefig(args.name)
